@@ -6,3 +6,13 @@ canvas{
     display: block;
     width: 800px;
 }
+.pdf{
+    width:100%;
+    height: 100vh;
+}
+.header{
+    transition: top 700ms linear;
+    top: 0;
+
+}
+
