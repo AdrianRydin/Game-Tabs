@@ -1,3 +1,6 @@
+html,body{
+    overflow-x: hidden;
+}
 canvas{
     padding-left: 0;
     padding-right: 0;
@@ -15,9 +18,12 @@ canvas{
     top: 0;
     height:10vh;
     border: 1px dotted #888888;
+    position: absolute;
+    width:100%
 }
 .pdfContainer{
     height:90vh;
     width:100%;
+    margin-top:11vh;
 }
 
