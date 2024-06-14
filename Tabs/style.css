@@ -14,8 +14,7 @@ canvas{
     transition: top 700ms linear;
     top: 0;
     height:10vh;
-    border: 1px solid darkred;
-
+    border: 1px dotted #888888;
 }
 .pdfContainer{
     height:90vh;
