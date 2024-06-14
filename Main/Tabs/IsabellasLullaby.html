@@ -6,9 +6,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="/Main/style.css">
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1>Game-Inspired Guitar Tabs</h1>
         <nav>
           <ul>
@@ -20,67 +21,10 @@
         </nav>
       </header>
 
-      <canvas id="pdf-canvas"></canvas>
+      <!-- <iframe src="/Main/PDF/IsabellasLullaby.pdf" class="pdf" width="1000px" height="1000px"></iframe> -->
+<div class="pdfContainer">
 
-      <script src="/Main/node_modules/pdfjs-dist/build/pdf.mjs" type="module"></script>
-
-      <script id="script" type="module">
-
-        var currPage = 1;
-        var numPages = 0;
-        var thePDF = null;
-        const url = "/Main/PDF/IsabellasLullaby.pdf";
-        pdfjsLib.GlobalWorkerOptions.workerSrc="/Main/node_modules/pdfjs-dist/build/pdf.worker.mjs"
-
-        pdfjsLib.getDocument(url).promise.then(function(pdf) {
-
-        //Set PDFJS global object (so we can easily access in our page functions
-        thePDF = pdf;
-
-        //How many pages it has
-        numPages = pdf.numPages;
-
-        //Start with first page
-        pdf.getPage( 1 ).then( handlePages );
-        });
-
-        function handlePages(page){
-              //This gives us the page's dimensions at full scale
-              var viewport = page.getViewport( {scale: 1.5} );
-
-              //We'll create a canvas for each page to draw it on
-              var canvas = document.createElement( "canvas" );
-              canvas.style.display = "block";
-              var context = canvas.getContext('2d');
-
-              canvas.height = viewport.height;
-              canvas.width = viewport.width;
-
-              //Draw it on the canvas
-              page.render({canvasContext: context, viewport: viewport});
-
-              //Add it to the web page
-              document.body.appendChild( canvas );
-
-              var line = document.createElement("hr");
-              document.body.appendChild( line );
-
-              //Move to next page
-              currPage++;
-              if ( thePDF !== null && currPage <= numPages )
-              {
-                  thePDF.getPage( currPage ).then( handlePages );
-              }
-          }
-
-
-        
-
-
-
-       
-      </script>
-      
-    
+  <embed src="https://drive.google.com/file/d/1dlRdmRCBWZdMzibz_lSU7nJW-Gb4JZdW/preview?usp=sharing" width="100%" height="100%">
+</div>
 </body>
 </html>
