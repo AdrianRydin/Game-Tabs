@@ -16,14 +16,17 @@ canvas{
 .header{
     transition: top 700ms linear;
     top: 0;
-    height:10vh;
+    height:fit-content;
     border: 1px dotted #888888;
-    position: absolute;
     width:100%
+    
 }
 .pdfContainer{
     height:90vh;
     width:100%;
-    margin-top:11vh;
+    position: relative;
 }
 
+@media screen and (max-width: 600px) {
+    
+}
